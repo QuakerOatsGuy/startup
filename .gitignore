@@ -1,0 +1,8 @@
+.vscode/
+.DS_Store
+dbConfig.json
+node_modules
+.pem
+fonts/
+music/
+*.sh
