@@ -5,19 +5,27 @@
   --body-background: #ad9458;
   --header-text: #eed2da;
   --footer-color: #808080;
+  --links: #fbf9df;
 
 }
 
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
+    font-family: "MS Sans Serif";
+    src: url('media/fonts/ms_sans_serif.woff') format("woff");
+    src: url('media/fonts/ms_sans_serif.woff2') format("woff2");
     cursor: url("../media/images/cursor.png"), auto;
-    /*background-color: var(--footer-color);*/
+    padding: 0.1em;
   }
 
   img {
-    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30em;
     height: auto;
+    margin:auto;
+    border:0.5em solid var(--header-background);
+    border-radius: 1em;
   }
   
   body {
@@ -26,12 +34,12 @@
   }
 
   .logo_container {
-    color: #a8c49c;
+    color: var(--header-links);
     float: left;
   }
   
   header {
-    background-color: #674fbd;
+    background-color: var(--header-background);
     float: up;
     display: flex;
     justify-content: space-between;
@@ -39,70 +47,44 @@
     margin: 1em 2;
     border-radius: 5px;
     outline-style:solid;
-    outline-color:#a8c49c;
+    outline-color:var(--header-links);
     outline-width: 5px;
   }
 
   header h1{
     align-self: stretch;
-    color: #eed2da;
+    color: var(--header-text);
     float: left;
   }
   .flex_container div{
-    color: #def2ed;
+    color: var(--header-text);
     float: right;
   }
   header a{
-    color: #a8c49c;
+    color: var(--header-links);
   }
   
   h1, p, label{
-    color: #faf6f5;
+    color: white;
   }
   
   section {
-    background-color: #ad9458;
+    background-color: var(--body-background);
     outline-style: solid;
     padding: 1em;
     margin: 1rem 5rem;
     border-radius: 5px;
+    color:white;
   }
   
   .spot{
     padding: 1em;
   }
 
-  .updates{
-    color: red;
-  }
-
-  .game_window{
-    margin: auto;
-    width: 500px;
-    height: 500px;
-    background-color: white;
-    color: black;
-    align-self: center;
-    outline-style:solid;
-  }
-
-  .game_window p{
-    color: black;
-    margin: auto;
-    font-family: "Open Sans";
-    src: url("../fonts/OpenSans-SemiBold.ttf");
-  }
-
-  .game_window a{
-    color: black;
-    margin: 5em;
-    font-family: "Open Sans";
-    src: url("../fonts/OpenSans-SemiBold.ttf");
-  }
-
 
   li {
     list-style: square;
+    margin-left: 2em;
   }
 
   button {
@@ -112,34 +94,46 @@
   }
   
   
-  #table-data {
-    background-color: black;
-    width: 300px;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color:black;
+    background-color: var(--header-text);
   }
   
-  td, th {
-    color: black;
-    text-align: center;
-    border: black solid thin;
-    padding: 1em;
+  th, td {
+    text-align: left;
+    padding: 8px;
   }
   
+  tr:nth-child(even) {background-color: var(--header-links);}
+  /*tr:nth-child(odd) {background-color: var(--header-text);}*/
+
   .footer {
     background-color: gray;
-    margin: 0;
-    padding: 0px;
-    border: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:5%;
+    color:white;
 
     font-style: italic;
-    text-align: center;
-    background-color: gray;
-    color: white;
+    text-align:justify;
   }
 
+  a{
+    color:var(--links);
+  }
 
+  .card{
+    background-color:white;
+    border:0.5em black;
+    border-radius: 1em;
+    float:left;
+    width:5em;
+    height:10em;
+  }
   
   .fly-in {
     animation: fly-from-left 1s ease-out;
