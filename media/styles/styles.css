@@ -76,8 +76,8 @@
   border-radius: 5px;
   color: white;
   min-height: fit-content;
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
   }
   
   .spot{
