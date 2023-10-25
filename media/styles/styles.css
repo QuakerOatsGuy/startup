@@ -138,6 +138,12 @@
     height:10em;
     margin: 1em;
     align-self: right;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*font-size: large;*/
   }
 
   .card-container{
