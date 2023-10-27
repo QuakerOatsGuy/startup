@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paroxysm</title>
     <link rel="icon" href="media/images/paroxysm_icon.ico" />
+    <script src="login.js"></script>
   </head>
 
   <body>
@@ -33,15 +34,13 @@
             <h1>Welcome to Paroxysm</h1>
             
             <br>
-            <form action="game.html" method="post">
-
+            
             <p>This website will be a matching game soon!</p>
             <label for="username">Username: </label>
             <input type="username" id="username" name="varUsername" />
             <label for="password">Password: </label>
             <input type="password" id="password" name="varPassword" />
-            <br>    <button type="submit">Submit</button>
-            </form>
+            <br>    <button type="submit" onclick="login()">Submit</button>
 
             <br>
             
