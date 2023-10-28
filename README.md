@@ -39,3 +39,7 @@ Learned how to use Git and Github
 I've actually taken this class once before, so I adapted some of my old work into the new website project!
 This update was focused on HTML, so I used my old CSS theme and created new HTML pages. I added an index page for testing CSS, a game page, an about page, and a leaderboard.
 Next, I'll focus on the CSS theme and making the website look nice. I want to use a windows 98-style theme, like [98.css](https://jdan.github.io/98.css/), and my biggest inspiration is [Joel G's Merch Website](https://joelgc.com/). The git repository does not have most of the media I featured in my website (such as a few audio files and fonts) to conserve space. I have a bit of a stretch goal - a background music player!
+
+## 2023/10/26
+I've added Javascript to my website! Now the game can actually be played. There are a few glitches and temporary placeholders here and there, but I will fix them later on.
+Now you can actually play the matching game in the game tab!
