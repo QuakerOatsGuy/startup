@@ -43,3 +43,7 @@ Next, I'll focus on the CSS theme and making the website look nice. I want to us
 ## 2023/10/26
 I've added Javascript to my website! Now the game can actually be played. There are a few glitches and temporary placeholders here and there, but I will fix them later on.
 Now you can actually play the matching game in the game tab!
+
+## 2023/11/11
+Today I initalized the startup with Node.js and express to work as an HTTP service. I still don't have a definite grasp on it, but I've figured out how to get the website working with it running. I've successfully gotten all the assignment requirements done, so that's good, but it will take more time to understand this aspect of the website. This area is super important to me because the last time I tried making a website, this is where I got stuck.
+Next, I need to fix the matching game logic, replace the numbers with images, and then add HTTP calls to push things like score, player time, and player accuracy to a database.
