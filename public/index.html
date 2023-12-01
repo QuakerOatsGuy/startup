@@ -3,12 +3,12 @@
 
   <head>
     <link rel="stylesheet" href="media/styles/styles.css">
+    <link rel="stylesheet" href="media/styles/login.css">
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paroxysm</title>
     <link rel="icon" href="media/images/paroxysm_icon.ico" />
-    <script src="login.js"></script>
   </head>
 
   <body>
@@ -36,12 +36,40 @@
             <br>
             
             <p>This website will be a matching game soon!</p>
-            <label for="username">Username: </label>
-            <input type="username" id="username" name="varUsername" />
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="varPassword" />
-            <br>    <button type="submit" onclick="login()">Submit</button>
+            <div id="loginControls" style="display: none">
+              <div class="input-group mb-3">
+                <span class="input-group-text">@</span>
+                <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">🔒</span>
+                <input class="form-control" type="password" id="userPassword" placeholder="password" />
+              </div>
+              <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+              <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+            </div>
+            <!-- Displayed when ready to play -->
+            <div id="playControls" style="display: none">
+              <div id="playerName"></div>
+              <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+              <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+          </div>
+    
+          <!-- Error dialog -->
+          <div class="modal fade" id="msgModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content text-dark">
+                <div class="modal-body">error message here</div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+            <br>
+            <button type="submit" onclick="login()">Submit</button>
             <br>
             
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -111,4 +139,6 @@
 
 
   </body>
+  <script src="login.js"></script>
+
 </html>

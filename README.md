@@ -47,3 +47,6 @@ Now you can actually play the matching game in the game tab!
 ## 2023/11/11
 Today I initalized the startup with Node.js and express to work as an HTTP service. I still don't have a definite grasp on it, but I've figured out how to get the website working with it running. I've successfully gotten all the assignment requirements done, so that's good, but it will take more time to understand this aspect of the website. This area is super important to me because the last time I tried making a website, this is where I got stuck.
 Next, I need to fix the matching game logic, replace the numbers with images, and then add HTTP calls to push things like score, player time, and player accuracy to a database.
+
+## 2023/11/30
+Still a bit behind, but I've made it so that actual images show up in the card game, not just numbers! I'm going to put all my energy into finishing Simon, then backport the new simon features to my website. I still need to implement database calls, websocket, and some other stuff. It's just like me to pile everything on at the last minute, but oh well.

@@ -5,6 +5,8 @@ wrong_guesses = 0;
 correct_guesses = 0;
 values.sort(() => Math.random() - 0.5);
 
+var card_images = ["","godot.png","css.png","firefox.png","html5.png","javascript.png","linuxmint.png","vlc.png","blender.png"];// dumbest fix of all time
+
 let openCards = [];
 cards.forEach((card, index) => {
     card.dataset.value = values[index];
@@ -13,8 +15,8 @@ cards.forEach((card, index) => {
 
         if (openCards.length < 2) {
             console.log(openCards)
-            card.innerHTML = card.dataset.value;
-            console.log(card.innerHTML)
+            card.innerHTML = "<img class = card_img src=\"media/card_img/"+ card_images[card.dataset.value] + "\">";
+            console.log(card.innerHTML, card_images[card.dataset.value])
             openCards.push(card);
 
             if (openCards.length === 2) {
