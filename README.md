@@ -50,3 +50,6 @@ Next, I need to fix the matching game logic, replace the numbers with images, an
 
 ## 2023/11/30
 Still a bit behind, but I've made it so that actual images show up in the card game, not just numbers! I'm going to put all my energy into finishing Simon, then backport the new simon features to my website. I still need to implement database calls, websocket, and some other stuff. It's just like me to pile everything on at the last minute, but oh well.
+
+## 2023//12/11
+Today I worked really hard and fixed the website login! Now it tells the database when you create a new account and it can pull your information out of the database to the front end. Next I need to fix the formatting of the login page, make it so you can actually win the game, and get the database to communicate with the game. I should have the website finished within this week!

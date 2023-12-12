@@ -37,6 +37,7 @@ cards.forEach((card, index) => {
                     if(correct_guesses == 8){
                         // Won game
                         card.innerHTML = "You Win!!!";
+                        saveScore;
                     }
                 }
             }
@@ -48,6 +49,68 @@ function test(){
     //console.log("Card has been clicked")
 }
 
+class Game{
+    getPlayerName() {
+        return localStorage.getItem('userName') ?? 'Mystery player';
+    }
+    updateScoresLocal(newScore) {
+        let scores = [];
+        const scoresText = localStorage.getItem('scores');
+        if (scoresText) {
+          scores = JSON.parse(scoresText);
+        }
+    
+        let found = false;
+        for (const [i, prevScore] of scores.entries()) {
+          if (newScore > prevScore.score) {
+            scores.splice(i, 0, newScore);
+            found = true;
+            break;
+          }
+        }
+    
+        if (!found) {
+          scores.push(newScore);
+        }
+    
+        if (scores.length > 10) {
+          scores.length = 10;
+        }
+    
+        localStorage.setItem('scores', JSON.stringify(scores));
+      }
+      broadcastEvent(from, type, value) {
+        const event = {
+          from: from,
+          type: type,
+          value: value,
+        };
+        this.socket.send(JSON.stringify(event));
+      }
+    async saveScore(score) {
+    const userName = this.getPlayerName();
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
+
+    try {
+      const response = await fetch('/api/score', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(newScore),
+      });
+
+      // Let other players know the game has concluded
+      this.broadcastEvent(userName, GameEndEvent, newScore);
+
+      // Store what the service gave us as the high scores
+      const scores = await response.json();
+      localStorage.setItem('scores', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just track scores locally
+      this.updateScoresLocal(newScore);
+    }
+  }
+}
 // BUGS
 
 /*
