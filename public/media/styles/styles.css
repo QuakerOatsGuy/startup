@@ -162,6 +162,8 @@
 
   .card-container{
     background-color: white;
+    color:black;
+    font-size: medium;
     border:1em solid var(--header-background);
     border-radius: 1em;
     display: flex;
