@@ -6,7 +6,8 @@ let startTime;
 let finalTime;
 let elapsedTime = 0;
 let timerId;
-let isRunning = false; // Add a flag to check if the timer is running
+let isRunning = false;
+
 
 function startTimer() {
   startTime = Date.now() - elapsedTime;
@@ -115,7 +116,8 @@ cards.forEach((card, index) => {
                             "You took "+ finalTime + "." + "<br>" +
                             "<button onClick='window.location.reload();'>Play Again</button>"
                             ;
-                            //saveScore;
+                            let game = new Game();
+                            game.saveScore();
                             
                         }
                     }
@@ -161,6 +163,7 @@ class Game{
     
         localStorage.setItem('scores', JSON.stringify(scores));
       }
+
       broadcastEvent(from, type, value) {
         const event = {
           from: from,
@@ -169,11 +172,14 @@ class Game{
         };
         this.socket.send(JSON.stringify(event));
       }
-    async saveScore(score) {
-    const userName = this.getPlayerName();
-    const date = new Date().toLocaleDateString();
-    const newScore = { name: userName, score: score, date: date };
 
+    async saveScore() {
+    console.log("Saving scores...");
+    const userName = this.getPlayerName();
+    const userTime = finalTime;
+    const userWrongGuesses = wrong_guesses;
+    const date = new Date().toLocaleDateString();
+    const newScore = {name: userName, time: userTime, guesses: userWrongGuesses, date: date};
     try {
       const response = await fetch('/api/score', {
         method: 'POST',
@@ -193,18 +199,9 @@ class Game{
     }
   }
 }
-// BUGS
-
-/*
--No real win state
--Clicking a card multiple times will result in the "You Win" message displaying
--No way to stop the player from interacting with correct cards
-*/
 
 // FEATURES TO BE ADDED
 
 /*
--Timer
--Win State
 -Broadcast to database for player scores
 */

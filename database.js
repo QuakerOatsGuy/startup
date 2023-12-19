@@ -8,8 +8,9 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
 const scoreCollection = db.collection('score');
-const timeCollection = db.collection('time');
 const guessesCollection = db.collection('guesses');
+											 
+												   
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -43,24 +44,18 @@ async function createUser(email, password) {
 }
 
 function addScore(score) {
-  scoreCollection.insertOne(score);
-}
-
-function addTime(time) {
-  timeCollection.insertOne(time);
-}
-
-function addGuesses(guesses) {
   guessesCollection.insertOne(score);
 }
 
 function getHighScores() {
-  const query = { score: { $gt: 0, $lt: 900 } };
+					 
+  const query = {};
   const options = {
-    sort: { score: -1 },
+    sort: { guesses: 1 },
     limit: 10,
   };
   const cursor = scoreCollection.find(query, options);
+								
   return cursor.toArray();
 }
 
