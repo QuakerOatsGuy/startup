@@ -44,7 +44,7 @@ async function createUser(email, password) {
 }
 
 function addScore(score) {
-  guessesCollection.insertOne(score);
+  scoreCollection.insertOne(score);
 }
 
 function getHighScores() {
